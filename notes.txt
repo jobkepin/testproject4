@@ -1,0 +1,6 @@
+- git clone the project
+- npx create-react-app
+- app.js make some divs
+- yarn add sass
+- add some css styling
+- make new folder and files for each component
