@@ -1,11 +1,11 @@
-import x from "./components/categories/categories.model.js"
-import Directory from "./components/directory/directory.component.jsx";
-
+import { Routes, Route } from "react-router";
+import Home from "./routes/home/home.component.jsx";
 
 const App = () => {
-
   return (
-    <Directory categories={x}/>
+    <Routes>
+      <Route path="/" element={<Home/>} />
+    </Routes>
   );
 }
 
