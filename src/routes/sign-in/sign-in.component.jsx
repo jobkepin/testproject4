@@ -1,8 +1,11 @@
+import SignUp from "../sign-up/sign-up.component.jsx";
+
 import {  
   signInWithGooglePopup, 
   createUserDocumentFromAuth 
   }
 from "../../utils/firebase/firebase.utils.js";
+
 
 
 const SignIn = () => {
@@ -21,6 +24,8 @@ const SignIn = () => {
         <button onClick={logGoogleUser}>
           Sign in with Google
         </button>
+      
+      <SignUp />
     </div>
   );
 };
