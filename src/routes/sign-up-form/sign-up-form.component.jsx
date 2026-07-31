@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { createUserAuthEmail, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils.js"
 
-import "./sign-up-form.styles.css";
+
 import FormInput from "../../components/form-input/form-input.component.jsx";
 import Button from "../../components/button/button.component.jsx"
+
+import "./sign-up-form.styles.css";
+
 
 
 const defaultFormFields = {
@@ -14,11 +17,10 @@ const defaultFormFields = {
 };
 
 
-
 const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {displayName, email, password, confirmPassword} = formFields;
-
+    
 
     const changeHandler = (event) => {
         const whichFieldToPick = event.target.name;

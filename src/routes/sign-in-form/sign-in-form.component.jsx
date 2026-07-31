@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { 
     signInWithGooglePopup, 
     signInUserAuthEmail,
@@ -17,15 +18,13 @@ const defaultFormFields = {
     password: "",
 };
 
-
 const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {email, password} = formFields;
 
     const signInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup();
-        console.log(user);
-        createUserDocumentFromAuth(user);
+        await signInWithGooglePopup();
+        //createUserDocumentFromAuth(user);
     };
 
     const changeHandler = (event) => {
@@ -43,14 +42,15 @@ const SignInForm = () => {
         event.preventDefault();
 
         try {
+
             //const { user } = await createUserAuthEmail(email, password);
             //await createUserDocumentFromAuth(user, {displayName});
             //console.log(user)
             const {user} = await signInUserAuthEmail(email, password);
-            console.log(user);
             resetFormFields();
 
         }catch(error){
+
             switch(error.code){
                 case "auth/invalid-credential":
                     alert("Email or password is incorrect.");
@@ -71,11 +71,10 @@ const SignInForm = () => {
             console.log("User authentication encountered an error\n",error);
             */
         };
-
     };
 
-
     console.log(formFields);
+
 
     return(
         <div className="sign-in-container">
